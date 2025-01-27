@@ -1,0 +1,21 @@
+<html>
+<body>
+    <button onclick="sortList()">Sort List</button>
+    <ul id="item-list">
+        <li>Banana</li>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Grapes</li>
+    </ul>
+    <script>
+        function sortList() {
+            const list = document.getElementById("item-list");
+            let items = Array.from(list.getElementsByTagName("li"));
+            items.sort((a, b) => a.textContent.localeCompare(b.textContent));
+            list.innerHTML = "";
+            items.forEach(item => list.appendChild(item));
+        }
+    </script>
+</body>
+</html>
+

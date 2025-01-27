@@ -1,0 +1,27 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Key Press Display</title>
+    <style>
+        #keyDisplay {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Press a Key</h1>
+    <div id="keyDisplay"></div>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            const key = event.key;
+            const keyDisplay = document.getElementById('keyDisplay');
+            keyDisplay.textContent = `Key Pressed: ${key}`;
+        });
+    </script>
+
+</body>
+</html>

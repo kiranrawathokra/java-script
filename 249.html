@@ -1,0 +1,16 @@
+<html>
+<body>
+     <ul id="d">
+        <li>kiran1</li>
+        <li>kiran2</li>
+        <li>kiran3</li>
+        <li>kiran4</li>
+    </ul>
+    <script>
+       let items = document.querySelectorAll('#d li'); 
+       for (let i = 0; i < items.length; i++) {
+           items[i].textContent = "Updated Heading " + (i + 1);
+       }
+    </script>
+</body>
+</html>

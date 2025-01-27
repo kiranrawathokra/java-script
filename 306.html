@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <div id="clock"></div>
+        <script>
+           function setinterval(){
+            let now=new Date();
+            let h=now.getHours().toString().padStart(2,"0");
+            let m=now.getMinutes().toString().padStart(2,'0');
+            let s=now.getSeconds().toString().padStart(2,'0');
+            let time=h+":"+m+":"+s;
+            document.getElementById("clock").innerHTML=time;
+           }
+           setInterval(setinterval,1000);
+
+           
+        </script>
+    </body>
+</html>

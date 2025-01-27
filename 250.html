@@ -1,0 +1,21 @@
+<html>
+<body>
+<h1>Table</h1>
+
+<script>
+    let table = document.createElement('table');
+    table.style.border = '1px solid black';
+    for(let i=0;i<3;i++){
+        let tr = document.createElement('tr');
+        for(let j=0;j<3;j++){
+             let td = document.createElement('td');
+             td.style.border='1px solid black';
+             td.textContent = "Sonu";
+             tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    }
+    document.body.appendChild(table);
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #clock {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">00:00:00</div>
+    <button onclick="startTimer()">Start Timer</button>
+
+    <script>
+        let intervalId = null;
+
+        function timerSystem() {
+            let now = new Date();
+            let s = now.getSeconds().toString().padStart(0, "0");
+            let time = s;
+            document.getElementById("clock").innerHTML = time;
+        }
+
+        function startTimer() {
+            if (!intervalId) {  
+                intervalId = setInterval(timerSystem, 1000);
+                timerSystem(); 
+            }
+        }
+    </script>
+</body>
+</html>

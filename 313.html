@@ -1,0 +1,39 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #status {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pop-up Blocker Checker</h1>
+    <button onclick="checkPopupBlocker()">Check Pop-ups</button>
+    <div id="status"></div>
+
+    <script>
+        function checkPopupBlocker() {
+            let newWindow = window.open("", "", "width=200,height=200");
+
+            if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
+                document.getElementById("status").innerHTML = "❌ Pop-ups are BLOCKED!";
+            } else {
+                document.getElementById("status").innerHTML = "✅ Pop-ups are ALLOWED!";
+                newWindow.close();
+            }
+        }
+    </script>
+</body>
+</html>

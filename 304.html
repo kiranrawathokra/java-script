@@ -1,0 +1,56 @@
+<html>
+<head>
+    <style>
+        #container {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            background-color: lightgray;
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: grab;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <div id="box"></div>
+    </div>
+
+    <script>
+        let box = document.getElementById("box");
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        box.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            offsetX = e.clientX - box.getBoundingClientRect().left;
+            offsetY = e.clientY - box.getBoundingClientRect().top;
+            box.style.cursor = "grabbing";
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (isDragging) {
+                let x = e.clientX - offsetX;
+                let y = e.clientY - offsetY;
+                box.style.left = x + "px";
+                box.style.top = y + "px";
+            }
+        });
+
+        document.addEventListener("mouseup", () => {
+            isDragging = false;
+            box.style.cursor = "grab";
+        });
+    </script>
+
+</body>
+</html>

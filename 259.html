@@ -1,0 +1,24 @@
+<html>
+<head>
+    <style>
+        #colorBox {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="colorBox">Hover over me</div>
+
+    <script>
+        let box = document.getElementById("colorBox");
+
+        box.addEventListener("mouseout", function() {
+            box.style.backgroundColor = "lightblue";
+        });
+    </script>
+
+</body>
+</html>

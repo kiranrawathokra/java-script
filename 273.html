@@ -1,0 +1,27 @@
+<html>
+<body>
+
+    <form id="myForm">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name">
+        <span class="error" id="error-message"></span>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            let nameInput = document.getElementById("name");
+            let errorMessage = document.getElementById("error-message");
+
+            if (nameInput.value.trim() === "") {
+                errorMessage.textContent = "Name is required!";
+                event.preventDefault(); 
+            } else {
+                errorMessage.textContent = ""; 
+            }
+        });
+    </script>
+
+</body>
+</html>

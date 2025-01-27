@@ -1,0 +1,23 @@
+<html>
+    
+<body>
+    <ul id="d">
+        <li>kiran1</li>
+        <li>kiran2</li>
+        <li>kiran3</li>
+        <li>kiran4</li>
+</ul>
+<button type="submit" onclick="delellastItem()">delete</button>
+<script>
+   function delellastItem(){
+       let ulElements= document.querySelector('#d');
+   let items=Array.from(ulElements.children);
+   let del=items[items.length-1];
+   del.remove();
+   }
+   
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+    
+<body>
+    <ul id="d">
+        <li>kiran1</li>
+        <li>kiran2</li>
+        <li>kiran3</li>
+        <li>kiran4</li>
+</ul>
+<script>
+   let ulElements= document.querySelector('#d');
+   let items=Array.from(ulElements.children);
+   items.reverse();
+   ulElements.innerHTML=" ";
+   items.forEach((item)=>{ulElements.appendChild(item)})
+   
+</script>
+
+
+</body>
+</html>

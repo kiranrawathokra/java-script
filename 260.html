@@ -1,0 +1,22 @@
+<html>
+    
+<body>
+    <ul id="d">
+        
+    </ul>
+    <button type="submit" onclick="addElement()">addElement</button>
+<script>
+        function addElement(){
+    let i=1;        
+   let d=document.getElementById('d');
+   let li=document.createElement('li');
+   li.textContent="this is peragraf "+i;
+   i++;
+   d.appendChild(li);
+   
+   }
+</script>
+
+
+</body>
+</html>

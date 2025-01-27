@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <style>
+    .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <div id="weather-container" class="weather-container">
+        <p>Loading...</p>
+    </div>
+    <br>
+    <button id="refresh-button">Refresh</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const weatherContainer = document.getElementById("weather-container");
+            const refreshButton = document.getElementById("refresh-button");
+            const API_KEY = "YOUR_OPENWEATHERMAP_API_KEY";
+
+            const fetchWeather = (lat, lon) => {
+                const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`;
+                
+                fetch(URL)
+                    .then(response => response.json())
+                    .then(data => {
+                        weatherContainer.innerHTML = `
+                            <h3>${data.name}</h3>
+                            <p>${data.weather[0].description}</p>
+                            <p><strong>${data.main.temp}°C</strong></p>
+                        `;
+                    })
+                    .catch(() => {
+                        weatherContainer.innerHTML = "<p class='error'>Failed to fetch weather data</p>";
+                    });
+            };
+
+            const getLocation = () => {
+                weatherContainer.innerHTML = "<p>Loading...</p>";
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        const { latitude, longitude } = position.coords;
+                        fetchWeather(latitude, longitude);
+                    },
+                    () => {
+                        weatherContainer.innerHTML = "<p class='error'>Failed to get location</p>";
+                    }
+                );
+            };
+
+            refreshButton.addEventListener("click", getLocation);
+            getLocation();
+        });
+    </script>
+</body>
+</html>

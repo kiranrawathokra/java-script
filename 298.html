@@ -1,0 +1,46 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>JSON Data Display</title>
+    <style>
+        #data-container {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="fetch-button">Fetch Data</button>
+    <div id="data-container"></div>
+
+    <script>
+        const fetchButton = document.getElementById('fetch-button');
+        const dataContainer = document.getElementById('data-container');
+
+        fetchButton.addEventListener('click', () => {
+            fetch('data.json') 
+                .then(response => response.json())
+                .then(data => {
+                    displayData(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    dataContainer.textContent = 'Error fetching data.';
+                });
+        });
+
+        function displayData(data) {
+            dataContainer.innerHTML = '';
+            const ul = document.createElement('ul');
+            data.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name}: ${item.value}`;
+                ul.appendChild(li);
+            });
+            dataContainer.appendChild(ul);
+        }
+    </script>
+</body>
+</html>

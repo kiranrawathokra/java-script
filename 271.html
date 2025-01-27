@@ -1,0 +1,16 @@
+
+<html>
+<body>
+    <button onclick="rotateImage()">Rotate Image</button>
+    <br><br>
+    <img id="image" src="your-image.jpg" alt="Image" width="300">
+
+    <script>
+        let rotation = 0;
+        function rotateImage() {
+            rotation += 90;
+            document.getElementById("image").style.transform = `rotate(${rotation}deg)`;
+        }
+    </script>
+</body>
+</html>

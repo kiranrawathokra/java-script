@@ -1,0 +1,35 @@
+<html>
+<head>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #message {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Redirecting in 10 seconds...</h1>
+    <div id="message"></div>
+
+    <script>
+        let countdown = 10;
+        function updateMessage() {
+            document.getElementById("message").innerHTML = `Redirecting in ${countdown} seconds...`;
+            if (countdown === 0) {
+                window.location.href = "https://www.example.com"; 
+            } else {
+                countdown--;
+                setTimeout(updateMessage, 1000);
+            }
+        }
+
+        updateMessage(); 
+    </script>
+</body>
+</html>

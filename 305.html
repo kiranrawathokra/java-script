@@ -1,0 +1,22 @@
+<html>
+
+<body>
+
+    <div id="container">
+        <button class="click-btn">Click Me</button>
+        <p>Clicks: <span id="count">0</span></p>
+    </div>
+
+    <script>
+        let count = 0;
+
+        document.getElementById("container").addEventListener("click", function(event) {
+            if (event.target.classList.contains("click-btn")) {
+                count++;
+                document.getElementById("count").textContent = count;
+            }
+        });
+    </script>
+
+</body>
+</html>

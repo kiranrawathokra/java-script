@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <style>
+        #modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="modal.style.display='block'">Open Modal</button>
+
+    <div id="modal">
+        <p>Popup Modal</p>
+        <button onclick="modal.style.display='none'">Close</button>
+    </div>
+
+</body>
+</html>

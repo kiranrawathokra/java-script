@@ -1,0 +1,33 @@
+
+<html>
+<head>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #resolution {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Screen Resolution Checker</h1>
+    <div id="resolution"></div>
+
+    <script>
+        function checkResolution() {
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+            document.getElementById("resolution").innerHTML = `Width: ${width}px, Height: ${height}px`;
+        }
+
+        checkResolution(); 
+        window.addEventListener("resize", checkResolution);
+    </script>
+</body>
+</html>

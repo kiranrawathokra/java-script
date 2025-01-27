@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Window Size</title>
+<style>
+  body {
+    font-family: monospace;
+  }
+</style>
+</head>
+<body>
+<p>width : <span id="width"></span>px</p>
+<p>height : <span id="height"></span>px</p>
+
+<script>
+  function unLode(){
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    document.getElementById("width").innerHTML = width;
+    document.getElementById("height").innerHTML = height;
+  }
+  unLode();
+  window.addEventListener("resize", unLode);
+</script>
+</body>
+</html>

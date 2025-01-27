@@ -1,0 +1,31 @@
+<html>
+<head>
+  
+    <style>
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="scrollToTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Top</button>
+
+    <div style="height: 1500px;">Scroll down to see the button...</div>
+
+    <script>
+        window.onscroll = function() {
+            document.getElementById("scrollToTopBtn").style.display = (window.scrollY > 100) ? "block" : "none";
+        };
+    </script>
+
+</body>
+</html>

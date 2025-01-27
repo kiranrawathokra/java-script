@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h3>Filtered List</h3>
+
+    <label for="filter">Filter by Category:</label>
+    <select id="filter">
+        <option value="All">All</option>
+        <option value="fruit">Fruit</option>
+        <option value="vagtable">Vegetable</option>
+    </select>
+    
+    <ul id="items">
+        <li class="fruit">Mango</li>
+        <li class="vagtable">Potato</li>
+        <li class="fruit">Banana</li>
+        <li class="vagtable">Tomato</li>
+    </ul>
+
+    <script>
+        var filter = document.getElementById('filter');
+        var items = document.getElementById('items');
+        var li = items.getElementsByTagName('li');
+        
+        function filterList() {
+            var filterValue = filter.value; 
+
+            for (let i = 0; i < li.length; i++) {
+                var item = li[i];
+                if (filterValue === 'All' || item.classList.contains(filterValue)) {
+                    item.style.display = ''; 
+                } else {
+                    item.style.display = 'none';             }
+            }
+        }
+        filterList();
+        filter.addEventListener('change', filterList);
+    </script>
+</body>
+</html>
+\
